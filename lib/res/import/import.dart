@@ -74,5 +74,8 @@ export 'package:roqqu/view/screens/error/error.dart';
 export 'package:roqqu/view/screens/splashscreen/splashscreen.dart';
 export 'package:roqqu/view/screens/home/home.dart';
 export 'package:roqqu/view/screens/home/open_order_history/open_order_history.dart';
+export 'package:roqqu/view/screens/home/charts_orderbook_trades/charts_orderbook_trades.dart';
+export 'package:roqqu/view/screens/home/charts_orderbook_trades/charts.dart';
+export 'package:candlesticks/candlesticks.dart';
 
 // export 'package:roqqu/view/screens/my_properties/my_properties.dart';

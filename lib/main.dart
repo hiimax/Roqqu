@@ -14,7 +14,6 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-
   Future.delayed(Duration.zero).then((value) async {
     String? deviceId = await PlatformDeviceId.getDeviceId;
     await LocalStorage.setItem("device_token", '$deviceId');

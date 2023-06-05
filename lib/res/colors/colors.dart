@@ -14,6 +14,7 @@ final Color roqquBackgroundColor = Color(0xffF8F8F9);
 final Color roqquTextColor = Color(0xff1C2127);
 final Color roqquSecondaryTextColor = Color(0xff737A91);
 final Color roqquBuyColor = Color(0xff00C076);
+final Color roqquSellColor = Color(0xffFF554A);
 
 /// dark colors
 final Color cardStrokeDarkColor = Color(0xff1C2127);

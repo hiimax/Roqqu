@@ -28,6 +28,7 @@ class roqquhelper {
         headline2:  TextStyle(fontSize: 18.0,color: roqquTextColor, fontWeight: FontWeight.w500),
         headline3:  TextStyle(fontSize: 18.0,color: roqquBuyColor, fontWeight: FontWeight.w500),
         bodyText1: TextStyle(fontSize: 12.0,color: roqquSecondaryTextColor, fontWeight: FontWeight.w500),
+        bodyText2: TextStyle(fontSize: 14.0,color: roqquSecondaryTextColor, fontWeight: FontWeight.w500,),
         button: TextStyle(fontSize: 16.0, color: Colors.white),
       ),
       iconTheme: IconThemeData(
