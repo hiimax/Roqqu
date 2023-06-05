@@ -18,8 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 5), () async {
-
-
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
       // SharedPreferences preferences = await SharedPreferences.getInstance();
       //
       // await preferences.setInt('initScreen', 1);
@@ -47,15 +46,16 @@ class _SplashScreenState extends State<SplashScreen> {
                 direction: FadeInDirection.left,
                 duration: Duration(seconds: 3),
                 child: Image.asset(
-                  'assets/images/ecoKrib 1.png',
+                  'assets/images/Logomark.png',
                   // color: RentaMainColor,
                 ),
               ),
+              XMargin(20),
               FadeInTranslate(
                 direction: FadeInDirection.right,
                 duration: Duration(seconds: 3),
                 child: Image.asset(
-                  'assets/images/ecoKrib.png',
+                  'assets/images/Logotype.png',
                   // color: RentaMainColor,
                 ),
               ),
