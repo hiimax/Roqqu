@@ -23,7 +23,11 @@ class SideMenu extends StatelessWidget {
                       YMargin(10),
                       CustomTextFormField(
                         hintText: 'Search',
-                        textStyle: theme.isDarkTheme ? roqquWhite : roqquBlack,
+                        textStyle: TextStyle(
+                            fontFamily: "Helvetica Neue",
+                            fontWeight: FontWeight.w500,
+                            color: theme.isDarkTheme ? roqquWhite : roqquBlack,
+                            fontSize: 16.0),
                         focusedBorderColor: roqquSecondaryTextColor,
                         errorBorderColor: roqquSecondaryTextColor,
                         enabledBorderColor: roqquSecondaryTextColor,

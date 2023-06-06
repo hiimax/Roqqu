@@ -164,10 +164,14 @@ class BuySellBottomSheet extends StatelessWidget {
                                 ]),
                                 SizedBox(
                                   width: config.sw(100),
-                                  child: const CustomTextFormField(
-                                      textStyle: theme.isDarkTheme
-                                          ? roqquWhite
-                                          : roqquBlack,
+                                  child: CustomTextFormField(
+                                      textStyle: TextStyle(
+                                          fontFamily: "Helvetica Neue",
+                                          fontWeight: FontWeight.w500,
+                                          color: theme.isDarkTheme
+                                              ? roqquWhite
+                                              : roqquBlack,
+                                          fontSize: 16.0),
                                       hintText: '0.00 USD '),
                                 )
                               ]),
@@ -199,10 +203,14 @@ class BuySellBottomSheet extends StatelessWidget {
                                 ]),
                                 SizedBox(
                                   width: config.sw(100),
-                                  child: const CustomTextFormField(
-                                      textStyle: theme.isDarkTheme
-                                          ? roqquWhite
-                                          : roqquBlack,
+                                  child: CustomTextFormField(
+                                      textStyle: TextStyle(
+                                          fontFamily: "Helvetica Neue",
+                                          fontWeight: FontWeight.w500,
+                                          color: theme.isDarkTheme
+                                              ? roqquWhite
+                                              : roqquBlack,
+                                          fontSize: 16.0),
                                       hintText: '0.00 USD '),
                                 )
                               ]),
