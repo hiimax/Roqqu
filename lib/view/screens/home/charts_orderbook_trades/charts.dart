@@ -1,6 +1,5 @@
 import '../../../../res/import/import.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter_candlesticks/flutter_candlesticks.dart';
+import 'package:intl/intl.dart';
 
 class Charts extends StatefulWidget {
   const Charts({Key? key}) : super(key: key);
@@ -10,35 +9,111 @@ class Charts extends StatefulWidget {
 }
 
 class _ChartsState extends State<Charts> {
-  List<Candle> candles = [];
   @override
   void initState() {
-    fetchCandles().then((value) {
-      setState(() {
-        candles = value;
-      });
+    Future.delayed(Duration.zero).then((value) {
+      final web = Provider.of<WebsocketProvider>(context, listen: false);
+      web.fetchCandles();
     });
+
     super.initState();
   }
 
-  Future<List<Candle>> fetchCandles() async {
-    final uri = Uri.parse(
-        "https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1h");
-    final res = await http.get(uri);
-    return (jsonDecode(res.body) as List<dynamic>)
-        .map((e) => Candle.fromJson(e))
-        .toList()
-        .reversed
-        .toList();
-  }
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child:  new OHLCVGraph(
-          data: candles,
-          enableGridLines: false,
-          volumeProp: 0.2
-      ),
+    return Consumer<WebsocketProvider>(
+      builder: (context, web, child) {
+        return Stack(
+          children: [
+            Center(
+              child: Candlesticks(
+                candles: web.candles,
+              ),
+            ),
+           Padding(padding: EdgeInsets.only(top: 19),
+           child:  Row(
+             mainAxisAlignment: MainAxisAlignment.start,
+             children: [
+               Image.asset('assets/images/arrowLine.png'),
+               XMargin(10),
+               Text(
+                 'BTC/USD',
+                 style: Theme.of(context).textTheme.subtitle1,
+               ),
+               XMargin(20),
+               Customtext(
+                 title: 'O ',
+                 titlestyle: Theme.of(context).textTheme.subtitle1,
+                 subtextstyle: Theme.of(context).textTheme.subtitle2,
+                 subtext: NumberFormat('###0.00').format(double.parse(web.open ?? '00.00')) ?? '',
+               ),
+               XMargin(5),
+               Customtext(
+                 title: 'H ',
+                 titlestyle: Theme.of(context).textTheme.subtitle1,
+                 subtextstyle: Theme.of(context).textTheme.subtitle2,
+                 subtext: NumberFormat('###0.00').format(double.parse(web.high ?? '00.00')) ?? '',
+               ),
+               XMargin(5),
+               Customtext(
+                 title: 'L ',
+                 titlestyle: Theme.of(context).textTheme.subtitle1,
+                 subtextstyle: Theme.of(context).textTheme.subtitle2,
+                 subtext: NumberFormat('###0.00').format(double.parse(web.low ?? '00.00')) ?? '',
+               ),
+               XMargin(5),
+               Customtext(
+                 title: 'C ',
+                 titlestyle: Theme.of(context).textTheme.subtitle1,
+                 subtextstyle: Theme.of(context).textTheme.subtitle2,
+                 subtext: NumberFormat('###0.00').format(double.parse(web.change ?? '00.00')) ?? '',
+               ),
+             ],
+           ),),
+           Padding(padding: EdgeInsets.only(top: 390),
+           child:  Row(
+             mainAxisAlignment: MainAxisAlignment.start,
+             children: [
+               Customtext(
+                 title: 'Vol(BTC): ',
+                 titlestyle: Theme.of(context).textTheme.subtitle1,
+                 subtextstyle: Theme.of(context).textTheme.headline4,
+                 subtext: NumberFormat('###0.00').format(double.parse(web.volB ?? '00.00')) ?? '',
+               ),
+               XMargin(20),
+               Customtext(
+                 title: 'Vol(USDT): ',
+                 titlestyle: Theme.of(context).textTheme.subtitle1,
+                 subtextstyle: Theme.of(context).textTheme.headline4,
+                 subtext: NumberFormat('###0.00').format(double.parse(web.volU ?? '00.00')) ?? '',
+               ),
+             ],
+           ),),
+          ],
+        );
+      },
     );
   }
+}
+
+Customtext({
+  required String title,
+  required String subtext,
+  required TextStyle? titlestyle,
+  required TextStyle? subtextstyle,
+}) {
+  return RichText(
+    text: TextSpan(
+      children: [
+        TextSpan(
+          text: title,
+          style: titlestyle,
+        ),
+        TextSpan(
+          text: subtext,
+          style: subtextstyle,
+        ),
+      ],
+    ),
+  );
 }

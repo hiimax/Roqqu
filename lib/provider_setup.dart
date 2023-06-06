@@ -11,8 +11,7 @@ List<SingleChildWidget> providers = [
   ...independentServices,
   ...dependentServices,
   ChangeNotifierProvider(create: (_) => ThemeProvider()),
-  ChangeNotifierProvider(create: (_) => AuthenticationProvider()),
-  ChangeNotifierProvider(create: (_) => PropertyManagementProvider()),
+  ChangeNotifierProvider(create: (_) => WebsocketProvider()),
   ...uiConsumableProviders
 ];
 

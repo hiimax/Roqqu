@@ -1,1 +1,0 @@
-/// This directory will hold all the model classes for the API response and for clean architecture create inner directories for each API response model class.
