@@ -1,6 +1,6 @@
-import '../../../res/import/import.dart';
 import 'package:intl/intl.dart';
 
+import '../../../res/import/import.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -28,18 +28,25 @@ class HomeScreen extends StatelessWidget {
               const XMargin(10),
               Image.asset('assets/images/Line.png'),
               const XMargin(10),
-              Image.asset('assets/images/menu-alt-1.png'),
+              Builder(builder: (ctx) {
+                return InkWell(
+                  onTap: () {
+                    Scaffold.of(context).openEndDrawer();
+                  },
+                  child: Image.asset('assets/images/menu-alt-1.png'),
+                );
+              }),
               const XMargin(15),
             ],
           )
         ],
       ),
-      body:SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             const HomeScreenWidget(),
-            Builder(builder: (ctx){
-              return  Container(
+            Builder(builder: (ctx) {
+              return Container(
                 height: config.sh(64),
                 width: MediaQuery.of(context).size.width,
                 color: roqquWhite,
@@ -47,29 +54,28 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SizedBox(
-                      width: MediaQuery.of(context).size.width/2.3,
+                      width: MediaQuery.of(context).size.width / 2.3,
                       height: config.sh(32),
-                      child:  CustomButton2(
-                        buttonColor: roqquBuyColor,
-                        borderColor:  roqquBuyColor,
-                        textColor: roqquWhite,
-                        title: 'Buy',
-                        onPressed: (){
-                          showModalBottomSheet(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return BuySellBottomSheet();
-                            },
-                          );
-                        }
-                      ),
+                      child: CustomButton2(
+                          buttonColor: roqquBuyColor,
+                          borderColor: roqquBuyColor,
+                          textColor: roqquWhite,
+                          title: 'Buy',
+                          onPressed: () {
+                            showModalBottomSheet(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return BuySellBottomSheet();
+                              },
+                            );
+                          }),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width/2.3,
+                      width: MediaQuery.of(context).size.width / 2.3,
                       height: config.sh(32),
-                      child:  const CustomButton2(
+                      child: const CustomButton2(
                         buttonColor: roqquSellColor,
-                        borderColor:  roqquSellColor,
+                        borderColor: roqquSellColor,
                         textColor: roqquWhite,
                         title: 'Sell',
                       ),
@@ -81,7 +87,8 @@ class HomeScreen extends StatelessWidget {
             const YMargin(30),
           ],
         ),
-      )
+      ),
+      endDrawer: MySideMenu(),
     );
   }
 }
@@ -104,24 +111,30 @@ class HomeScreenWidget extends StatelessWidget {
                 color: roqquWhite,
                 child: Column(
                   children: [
-                    Padding(padding: const EdgeInsets.all(16),
-                      child:   Row(
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Image.asset('assets/images/Group 237550.png'),
                           const XMargin(10),
-                          Text('BTC/USDT',
-                            style: Theme.of(context).textTheme.headline2,),
+                          Text(
+                            'BTC/USDT',
+                            style: Theme.of(context).textTheme.headline2,
+                          ),
                           const XMargin(20),
                           const Icon(Icons.keyboard_arrow_down_outlined),
                           const XMargin(27),
-                          Text('\$${NumberFormat('#,##0').format(double.parse(web.open ?? '00'))}',
-                            style: Theme.of(context).textTheme.headline3,),
+                          Text(
+                            '\$${NumberFormat('#,##0').format(double.parse(web.open ?? '00'))}',
+                            style: Theme.of(context).textTheme.headline3,
+                          ),
                         ],
                       ),
                     ),
-                    Padding(padding: const EdgeInsets.all(16),
-                      child:   Row(
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Column(
@@ -132,19 +145,22 @@ class HomeScreenWidget extends StatelessWidget {
                                 children: [
                                   const Icon(Icons.access_time),
                                   const XMargin(5),
-                                  Text('24h change',
-                                    style: Theme.of(context).textTheme.bodyText1,),
+                                  Text(
+                                    '24h change',
+                                    style:
+                                        Theme.of(context).textTheme.bodyText1,
+                                  ),
                                 ],
                               ),
                               const YMargin(8),
-                              Text('${NumberFormat('###.00').format(double.parse(web.change ?? '00'))} ${ decimalValue(web.change ?? '00.00')}',
-                                style: Theme.of(context).textTheme.headline3,),
+                              Text(
+                                '${NumberFormat('###.00').format(double.parse(web.change ?? '00'))} ${decimalValue(web.change ?? '00.00')}',
+                                style: Theme.of(context).textTheme.headline3,
+                              ),
                               const XMargin(10),
-
                             ],
                           ),
                           Image.asset('assets/images/divider.png'),
-
                           Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -153,15 +169,19 @@ class HomeScreenWidget extends StatelessWidget {
                                 children: [
                                   const Icon(Icons.arrow_upward_outlined),
                                   const XMargin(5),
-                                  Text('24h high',
-                                    style: Theme.of(context).textTheme.bodyText1,),
+                                  Text(
+                                    '24h high',
+                                    style:
+                                        Theme.of(context).textTheme.bodyText1,
+                                  ),
                                 ],
                               ),
                               const YMargin(8),
-                              Text('${NumberFormat('###.00').format(double.parse(web.high ?? '00'))} ${ decimalValue(web.high ?? '00.00')}',
-                                style: Theme.of(context).textTheme.headline2,),
+                              Text(
+                                '${NumberFormat('###.00').format(double.parse(web.high ?? '00'))} ${decimalValue(web.high ?? '00.00')}',
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
                               const XMargin(10),
-
                             ],
                           ),
                           Image.asset('assets/images/divider.png'),
@@ -174,21 +194,24 @@ class HomeScreenWidget extends StatelessWidget {
                                 children: [
                                   const Icon(Icons.arrow_downward_outlined),
                                   const XMargin(5),
-                                  Text('24h low',
-                                    style: Theme.of(context).textTheme.bodyText1,),
+                                  Text(
+                                    '24h low',
+                                    style:
+                                        Theme.of(context).textTheme.bodyText1,
+                                  ),
                                 ],
                               ),
                               const YMargin(8),
-                              Text('${NumberFormat('###.00').format(double.parse(web.low ?? '00'))} ${ decimalValue(web.low ?? '00.00')}',
-                                style: Theme.of(context).textTheme.headline2,),
+                              Text(
+                                '${NumberFormat('###.00').format(double.parse(web.low ?? '00'))} ${decimalValue(web.low ?? '00.00')}',
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
                               const XMargin(10),
-
                             ],
                           ),
                         ],
                       ),
                     ),
-
                   ],
                 ),
               );
@@ -196,7 +219,7 @@ class HomeScreenWidget extends StatelessWidget {
           ),
           const YMargin(10),
           ChartsOrderbookTrades(),
-          const  YMargin(10),
+          const YMargin(10),
           OpenOrderHistory(),
           const YMargin(62),
         ],
