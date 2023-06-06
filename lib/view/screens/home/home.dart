@@ -8,87 +8,98 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final config = SizeConfig();
-    return Scaffold(
-      appBar: CustomAppbar(
-        actions: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const XMargin(15),
-              Image.asset('assets/images/Logomark.png'),
-              const XMargin(10),
-              Image.asset('assets/images/Logotype.png'), // Add Spacer widget
-            ],
-          ),
-          const Spacer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset('assets/images/81.png'),
-              const XMargin(10),
-              Image.asset('assets/images/Line.png'),
-              const XMargin(10),
-              Builder(builder: (ctx) {
-                return InkWell(
-                  onTap: () {
-                    Scaffold.of(context).openEndDrawer();
-                  },
-                  child: Image.asset('assets/images/menu-alt-1.png'),
-                );
-              }),
-              const XMargin(15),
-            ],
-          )
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const HomeScreenWidget(),
-            Builder(builder: (ctx) {
-              return Container(
-                height: config.sh(64),
-                width: MediaQuery.of(context).size.width,
-                color: roqquWhite,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Consumer<ThemeProvider>(
+      builder: (context, theme, child) {
+        return Scaffold(
+            appBar: CustomAppbar(
+              actions: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width / 2.3,
-                      height: config.sh(32),
-                      child: CustomButton2(
-                          buttonColor: roqquBuyColor,
-                          borderColor: roqquBuyColor,
-                          textColor: roqquWhite,
-                          title: 'Buy',
-                          onPressed: () {
-                            showModalBottomSheet(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return BuySellBottomSheet();
-                              },
-                            );
-                          }),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width / 2.3,
-                      height: config.sh(32),
-                      child: const CustomButton2(
-                        buttonColor: roqquSellColor,
-                        borderColor: roqquSellColor,
-                        textColor: roqquWhite,
-                        title: 'Sell',
-                      ),
-                    ),
+                    const XMargin(15),
+                    Image.asset('assets/images/Logomark.png'),
+                    const XMargin(10),
+                    Image.asset(
+                        'assets/images/Logotype.png'), // Add Spacer widget
                   ],
                 ),
-              );
-            }),
-            const YMargin(30),
-          ],
-        ),
-      ),
-      endDrawer: MySideMenu(),
+                const Spacer(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/images/81.png'),
+                    const XMargin(10),
+                    Image.asset('assets/images/Line.png'),
+                    const XMargin(10),
+                    Builder(builder: (ctx) {
+                      return InkWell(
+                        onTap: () {
+                          Scaffold.of(ctx).openEndDrawer();
+                        },
+                        child: Image.asset('assets/images/menu-alt-1.png'),
+                      );
+                    }),
+                    const XMargin(15),
+                  ],
+                )
+              ],
+            ),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const HomeScreenWidget(),
+                  Builder(builder: (ctx) {
+                    return Container(
+                      height: config.sh(64),
+                      width: MediaQuery.of(context).size.width,
+                      color: theme.isDarkTheme ? roqqueDarkColor : roqquWhite,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width / 2.3,
+                            height: config.sh(32),
+                            child: CustomButton2(
+                                buttonColor: roqquBuyColor,
+                                borderColor: roqquBuyColor,
+                                textColor: roqquWhite,
+                                title: 'Buy',
+                                onPressed: () {
+                                  showModalBottomSheet(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return BuySellBottomSheet();
+                                    },
+                                  );
+                                }),
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width / 2.3,
+                            height: config.sh(32),
+                            child: const CustomButton2(
+                              buttonColor: roqquSellColor,
+                              borderColor: roqquSellColor,
+                              textColor: roqquWhite,
+                              title: 'Sell',
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }),
+                  const YMargin(30),
+                ],
+              ),
+            ),
+            endDrawer: Container(
+              height: config.sh(284),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: theme.isDarkTheme ? roqqueDarkColor : roqquWhite,
+              ),
+              child: SideMenu(),
+            ));
+      },
     );
   }
 }
@@ -103,12 +114,12 @@ class HomeScreenWidget extends StatelessWidget {
       child: Column(
         children: [
           const YMargin(10),
-          Consumer<WebsocketProvider>(
-            builder: (context, web, child) {
+          Consumer2<WebsocketProvider, ThemeProvider>(
+            builder: (context, web, theme, _) {
               return Container(
                 height: config.sh(140),
                 width: MediaQuery.of(context).size.width,
-                color: roqquWhite,
+                color: theme.isDarkTheme ? roqqueDarkColor : roqquWhite,
                 child: Column(
                   children: [
                     Padding(

@@ -97,28 +97,77 @@ class roqquhelper {
     final base = ThemeData.light();
     return ThemeData(
       visualDensity: VisualDensity.adaptivePlatformDensity,
-      scaffoldBackgroundColor: roqquBackgroundColor,
-      backgroundColor: roqquBackgroundColor,
-      brightness: Brightness.light,
+      scaffoldBackgroundColor: roqquDarkBackgroundColor,
+      backgroundColor: roqquDarkBackgroundColor,
+      brightness: Brightness.dark,
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: cardStrokeDarkColor,
+      ),
       primaryColor: Colors.blue,
       accentColor: Colors.orange,
-      canvasColor: Colors.white,
-      cardColor: Colors.white,
+      canvasColor: Colors.black,
+      cardColor: Colors.black,
       dividerColor: Colors.grey,
       focusColor: Colors.blue,
       hoverColor: Colors.grey[200],
       errorColor: Colors.red,
-      appBarTheme: const AppBarTheme(
-        color: roqquWhite,
-        elevation: 0,
+      appBarTheme: AppBarTheme(
+        color: roqqueDarkColor,
+        brightness: Brightness.dark,
       ),
-      textTheme: const TextTheme(
+      textTheme: TextTheme(
         headline1: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-        bodyText1: TextStyle(fontSize: 16.0),
+        headline2: TextStyle(
+            fontSize: 16.0,
+            color: roqquDarkTextColor,
+            fontWeight: FontWeight.w500),
+        headline3: TextStyle(
+            fontSize: 16.0,
+            color: roqquDarkBuyColor,
+            fontWeight: FontWeight.w500),
+        bodyText1: TextStyle(
+            fontSize: 12.0,
+            color: roqquDarkSecondaryTextColor,
+            fontWeight: FontWeight.w500),
+        bodyText2: TextStyle(
+          fontSize: 14.0,
+          color: roqquDarkSecondaryTextColor,
+          fontWeight: FontWeight.w500,
+        ),
+        subtitle1: TextStyle(
+          fontSize: 10.0,
+          color: roqquDarkSecondaryTextColor,
+          fontWeight: FontWeight.w500,
+        ),
+        subtitle2: TextStyle(
+          fontSize: 10.0,
+          color: roqquDarkBuyColor,
+          fontWeight: FontWeight.w500,
+        ),
+        headline4: TextStyle(
+          fontSize: 10.0,
+          color: roqquDarkVoltColor,
+          fontWeight: FontWeight.w500,
+        ),
+        headline5: TextStyle(
+          fontSize: 12.0,
+          color: roqquDarkVoltColor,
+          fontWeight: FontWeight.w500,
+        ),
+        headline6: TextStyle(
+          fontSize: 12.0,
+          color: roqquDarkTextColor,
+          fontWeight: FontWeight.w500,
+        ),
+        headlineLarge: TextStyle(
+          fontSize: 12.0,
+          color: roqquDarkBuyColor,
+          fontWeight: FontWeight.w500,
+        ),
         button: TextStyle(fontSize: 16.0, color: Colors.white),
       ),
       iconTheme: const IconThemeData(
-        color: Colors.blue,
+        color: roqquWhite,
         size: 24.0,
       ),
       buttonTheme: ButtonThemeData(

@@ -19,3 +19,13 @@ const Color roqquFountainblueColor = Color(0xff2764FF);
 
 /// dark colors
 const Color cardStrokeDarkColor = Color(0xff1C2127);
+const Color roqqueDarkColor = Color(0xff17181B);
+const Color greyDarkColor = Color(0xffCFD3D8);
+const Color roqquDarkBackgroundColor = Color(0xff1C2127);
+const Color roqquDarkTextColor = Colors.white;
+const Color roqquDarkSecondaryTextColor = Color(0xff737A91);
+const Color roqquDarkBuyColor = Color(0xff00C076);
+const Color roqquDarkSellColor = Color(0xffFF554A);
+const Color roqquDarkVoltColor = Color(0xffFF6838);
+const Color roqquDarkFountainblueColor = Color(0xff2764FF);
+const Color roqquDarkSelectionColor = Color(0xff353945);

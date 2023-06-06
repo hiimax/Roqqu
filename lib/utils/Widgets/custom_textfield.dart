@@ -1,6 +1,6 @@
-import '../../res/import/import.dart';
 import 'package:intl/intl.dart';
 
+import '../../res/import/import.dart';
 
 String decimalValue(String value) {
   const pattern = r'\.\d+';
@@ -26,6 +26,9 @@ class CustomTextFormField extends StatelessWidget {
   final int? maxLength;
   final int? maxLines;
   final fillColor;
+  final Color? errorBorderColor;
+  final Color? enabledBorderColor;
+  final Color? focusedBorderColor;
   final double? height;
   final List<TextInputFormatter>? textInputFormatter;
   final Widget? prefixIcon;
@@ -34,25 +37,28 @@ class CustomTextFormField extends StatelessWidget {
 
   const CustomTextFormField(
       {Key? key,
-        this.validator,
-        this.label,
-        this.controller,
-        this.textInputType,
-        this.onchanged,
-        this.onsaved,
-        this.textInputAction,
-        this.hintText,
-        this.titleText,
-        this.textStyle,
-        this.maxLength,
-        this.maxLines,
-        this.height,
-        this.textInputFormatter,
-        this.suffixIcon,
-        this.prefixIcon,
-        this.onTap,
-        this.fillColor,
-        this.textAlign})
+      this.validator,
+      this.errorBorderColor,
+      this.enabledBorderColor,
+      this.focusedBorderColor,
+      this.label,
+      this.controller,
+      this.textInputType,
+      this.onchanged,
+      this.onsaved,
+      this.textInputAction,
+      this.hintText,
+      this.titleText,
+      this.textStyle,
+      this.maxLength,
+      this.maxLines,
+      this.height,
+      this.textInputFormatter,
+      this.suffixIcon,
+      this.prefixIcon,
+      this.onTap,
+      this.fillColor,
+      this.textAlign})
       : super(key: key);
 
   @override
@@ -87,20 +93,18 @@ class CustomTextFormField extends StatelessWidget {
           fillColor: fillColor ?? Colors.transparent,
           filled: true,
           enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: Transparent,
+              borderSide: BorderSide(
+                color: enabledBorderColor ?? Transparent,
               ),
               borderRadius: BorderRadius.circular(10)),
           errorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Transparent),
+              borderSide: BorderSide(color: errorBorderColor ?? Transparent),
               borderRadius: BorderRadius.circular(10)),
           focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Transparent),
+              borderSide: BorderSide(color: focusedBorderColor ?? Transparent),
               borderRadius: BorderRadius.circular(10)),
           labelStyle: const TextStyle(
-              color: roqquBlack,
-              fontSize: 16,
-              fontWeight: FontWeight.w700),
+              color: roqquBlack, fontSize: 16, fontWeight: FontWeight.w700),
           prefixIcon: prefixIcon,
           suffix: suffixIcon,
           prefixIconConstraints: const BoxConstraints(
