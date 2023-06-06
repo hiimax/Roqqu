@@ -23,7 +23,9 @@ class BuySellBottomSheet extends StatelessWidget {
                       height: config.sh(40),
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                        color: cardStrokeColor,
+                        color: theme.isDarkTheme
+                            ? cardStrokeDarkColor
+                            : cardStrokeColor,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Row(

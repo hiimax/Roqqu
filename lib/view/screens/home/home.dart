@@ -17,10 +17,14 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const XMargin(15),
-                    Image.asset('assets/images/Logomark.png'),
+                    Image.asset(theme.isDarkTheme
+                        ? 'assets/images/darkLogomark.png'
+                        : 'assets/images/Logomark.png'),
                     const XMargin(10),
                     Image.asset(
-                        'assets/images/Logotype.png'), // Add Spacer widget
+                      'assets/images/Logotype.png',
+                      color: theme.isDarkTheme ? roqquWhite : roqquBlack,
+                    ), // Add Spacer widget
                   ],
                 ),
                 const Spacer(),
