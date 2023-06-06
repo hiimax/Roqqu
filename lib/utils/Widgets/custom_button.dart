@@ -16,7 +16,7 @@ class OnBoardingButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               shape: BoxShape.circle),
           child: Padding(
             padding: const EdgeInsets.all(10),
@@ -84,7 +84,7 @@ class CustomButtonWithIconRight extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    icon ?? SizedBox(),
+                    icon ?? const SizedBox(),
                   ],
                 ),
               ),
@@ -183,22 +183,22 @@ class CustomButton extends StatelessWidget {
           fontWeight: FontWeight.w700,
           color: textColor ),
     );
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: 56,
       child: loadingState
-          ? Center(
+          ? const Center(
         child: CircularProgressIndicator(
         ),
       )
           : TextButton(
         onPressed: enabled ? onPressed : null,
-        child: textWidget,
         style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(
                 enabled ? buttonColor  : roqquGrey),
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
                 borderRadius: buttonRadius ?? BorderRadius.circular(10)))),
+        child: textWidget,
       ),
     );
   }
@@ -245,8 +245,8 @@ class CustomButtonWithIcon extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              icon ?? SizedBox.shrink(),
-              SizedBox(
+              icon ?? const SizedBox.shrink(),
+              const SizedBox(
                 width: 5,
               ),
               Text(

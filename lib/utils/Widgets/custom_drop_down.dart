@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:roqqu/res/colors/colors.dart';
 
 class DropDownInput extends StatelessWidget {
-  const DropDownInput({
+  const DropDownInput({super.key, 
     this.controller,
     required this.items,
     this.hint,
@@ -33,7 +33,7 @@ class DropDownInput extends StatelessWidget {
           enabled: enabled,
 
           //readOnly: true,
-          style: TextStyle(fontSize: 15, color: roqquGrey),
+          style: const TextStyle(fontSize: 15, color: roqquGrey),
           decoration: InputDecoration(
             hintText: hint,
             filled: true,
@@ -42,18 +42,18 @@ class DropDownInput extends StatelessWidget {
             enabledBorder: OutlineInputBorder(
                 borderSide:
                     BorderSide(color: roqquGrey.withOpacity(.5), width: 1),
-                borderRadius: BorderRadius.all(Radius.circular(5))),
+                borderRadius: const BorderRadius.all(Radius.circular(5))),
             disabledBorder: OutlineInputBorder(
                 borderSide:
                     BorderSide(color: roqquGrey.withOpacity(.5), width: 1),
-                borderRadius: BorderRadius.all(Radius.circular(5))),
-            focusedBorder: OutlineInputBorder(
+                borderRadius: const BorderRadius.all(Radius.circular(5))),
+            focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
                      width: 1),
                 borderRadius: BorderRadius.all(Radius.circular(5))),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.0),
-              borderSide: BorderSide(color: Colors.red),
+              borderSide: const BorderSide(color: Colors.red),
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.0),
@@ -68,8 +68,9 @@ class DropDownInput extends StatelessWidget {
               },
               itemBuilder: (BuildContext context) {
                 return items.map<PopupMenuItem<String>>((String value) {
-                  return new PopupMenuItem(
-                      child: new Text(value), value: value);
+                  return PopupMenuItem(
+                      value: value,
+                      child: Text(value));
                 }).toList();
               },
             ),

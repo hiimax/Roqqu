@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../dimensions/dimensions.dart';
 
 class XMargin extends StatelessWidget {
-  const XMargin(this.x);
+  const XMargin(this.x, {super.key});
 
   final double x;
 
@@ -16,7 +16,7 @@ class XMargin extends StatelessWidget {
 }
 
 class YMargin extends StatelessWidget {
-  const YMargin(this.y);
+  const YMargin(this.y, {super.key});
 
   final double y;
 

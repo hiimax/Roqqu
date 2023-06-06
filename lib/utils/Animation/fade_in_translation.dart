@@ -81,13 +81,13 @@ class _FadeInTranslateState extends State<FadeInTranslate>
   Tween<Offset> _getOffsetTween() {
     switch (widget.direction) {
       case FadeInDirection.left:
-        return Tween<Offset>(begin: Offset(-130, 25), end: Offset.zero);
+        return Tween<Offset>(begin: const Offset(-130, 25), end: Offset.zero);
       case FadeInDirection.right:
-        return Tween<Offset>(begin: Offset(130, 0), end: Offset.zero);
+        return Tween<Offset>(begin: const Offset(130, 0), end: Offset.zero);
       case FadeInDirection.top:
-        return Tween<Offset>(begin: Offset(0, -130), end: Offset.zero);
+        return Tween<Offset>(begin: const Offset(0, -130), end: Offset.zero);
       default:
-        return Tween<Offset>(begin: Offset(0, 130), end: Offset.zero);
+        return Tween<Offset>(begin: const Offset(0, 130), end: Offset.zero);
     }
   }
 }

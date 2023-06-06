@@ -15,7 +15,7 @@ class OpenOrderHistory extends StatelessWidget {
 
         child: Column(
           children: [
-            Padding(padding: EdgeInsets.symmetric(horizontal:16,vertical: 16 ),
+            Padding(padding: const EdgeInsets.symmetric(horizontal:16,vertical: 16 ),
             child: Container(
               height: config.sh(40),
               width: MediaQuery.of(context).size.width,
@@ -74,7 +74,7 @@ class OpenOrderHistory extends StatelessWidget {
             ) ,),
 
             Flexible(
-                child: Padding(padding: EdgeInsets.symmetric(horizontal: 48),
+                child: Padding(padding: const EdgeInsets.symmetric(horizontal: 48),
 
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -84,7 +84,7 @@ class OpenOrderHistory extends StatelessWidget {
                         Index ==0 ? 'No Open Orders' :  Index ==1 ? 'No Positions' :  'No Order History',
                         style: Theme.of(context).textTheme.headline2,
                       ),
-                      YMargin(20),
+                      const YMargin(20),
                       Text(
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id pulvinar nullam sit imperdiet pulvinar.',
                         textAlign: TextAlign.center,
@@ -116,7 +116,7 @@ ToggleWidget(
               color: shadow,
               spreadRadius: 1,
               blurRadius: 5,
-              offset: Offset(0, 3), // changes the position of the shadow
+              offset: const Offset(0, 3), // changes the position of the shadow
             ),
           ]),
       child: Center(

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:roqqu/res/import/import.dart';
 
 Widget SettingsCustomWidget({
@@ -8,11 +8,11 @@ Widget SettingsCustomWidget({
   return Row(
     children: [
       buttonicon,
-      SizedBox(width: 10),
+      const SizedBox(width: 10),
       Text(
         buttonname,
         textAlign: TextAlign.left,
-        style: TextStyle(
+        style: const TextStyle(
             fontFamily: "Helvetica Neue",
             fontWeight: FontWeight.w500,
             fontSize: 16.0),
@@ -30,7 +30,7 @@ Widget SettingsCustomWidgetWithText({
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       buttonicon,
-      SizedBox(width: 10),
+      const SizedBox(width: 10),
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -39,16 +39,16 @@ Widget SettingsCustomWidgetWithText({
             padding: const EdgeInsets.only(top: 4),
             child: Text(
               buttonname,
-              style: TextStyle(
+              style: const TextStyle(
                   fontFamily: "Helvetica Neue",
                   fontWeight: FontWeight.w500,
                   fontSize: 15.0),
             ),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Text(
             buttonsubtext,
-            style: TextStyle(
+            style: const TextStyle(
                 fontFamily: "Helvetica Neue",
                 fontWeight: FontWeight.w500,
                 fontSize: 11.0),
@@ -73,13 +73,13 @@ Widget AccountWidget({
         Text(
           widgettitle,
           textAlign: TextAlign.left,
-          style: TextStyle(
+          style: const TextStyle(
               fontFamily: "Helvetica Neue",
               fontWeight: FontWeight.w500,
               color: roqquBlack,
               fontSize: 16.0),
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -88,7 +88,7 @@ Widget AccountWidget({
               child: Text(
                 widgetvalue,
                 textAlign: TextAlign.left,
-                style: TextStyle(
+                style: const TextStyle(
                     fontFamily: "Helvetica Neue",
                     fontWeight: FontWeight.w500,
 
@@ -115,7 +115,7 @@ Widget AccountWidgetWithoutIcon({
         Text(
           widgettitle,
           textAlign: TextAlign.left,
-          style: TextStyle(
+          style: const TextStyle(
               fontFamily: "Helvetica Neue",
               fontWeight: FontWeight.w500,
               color: roqquBlack,
@@ -124,7 +124,7 @@ Widget AccountWidgetWithoutIcon({
         Text(
           widgetvalue,
           textAlign: TextAlign.left,
-          style: TextStyle(
+          style: const TextStyle(
               fontFamily: "Helvetica Neue",
               fontWeight: FontWeight.w500,
 

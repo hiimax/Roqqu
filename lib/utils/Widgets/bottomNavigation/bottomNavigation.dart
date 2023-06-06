@@ -6,72 +6,70 @@ class BottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StatefulBuilder(builder: (context, setState) {
-      return Container(
+      return SizedBox(
         height: 60,
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: roqquWhite,
           showSelectedLabels: true,
           unselectedItemColor: roqquGrey,
-          selectedLabelStyle: TextStyle(
+          selectedLabelStyle: const TextStyle(
             fontWeight: FontWeight.bold,
           ),
-          unselectedLabelStyle: TextStyle(
+          unselectedLabelStyle: const TextStyle(
             fontWeight: FontWeight.bold,
           ),
           currentIndex: currentIndex,
           onTap: (index) {
-            if (index != null) {
-              switch (index) {
-                case 0:
-                  if (currentIndex != 0) {
+            switch (index) {
+              case 0:
+                if (currentIndex != 0) {
 
-                    setState(() {
-                      currentIndex = index;
-                    });
-                  } else {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                } else {
 
-                  }
+                }
 
-                  break;
-                case 1:
-                  if (currentIndex != 1) {
+                break;
+              case 1:
+                if (currentIndex != 1) {
 
-                    setState(() {
-                      currentIndex = index;
-                    });
-                  } else {
-                    return;
-                  }
-
-                  break;
-                case 2:
-                  if (currentIndex != 2) {
-
-                    setState(() {
-                      currentIndex = index;
-                    });
-                  } else {
-                    return;
-                  }
-                  break;
-                case 3:
-                  if (currentIndex != 3) {
-
-                    setState(() {
-                      currentIndex = index;
-                    });
-                  } else {
-                    return;
-                  }
-
-                  break;
-                default:
+                  setState(() {
+                    currentIndex = index;
+                  });
+                } else {
                   return;
-              }
+                }
+
+                break;
+              case 2:
+                if (currentIndex != 2) {
+
+                  setState(() {
+                    currentIndex = index;
+                  });
+                } else {
+                  return;
+                }
+                break;
+              case 3:
+                if (currentIndex != 3) {
+
+                  setState(() {
+                    currentIndex = index;
+                  });
+                } else {
+                  return;
+                }
+
+                break;
+              default:
+                return;
             }
           },
-          items: [
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home_filled,

@@ -1,5 +1,4 @@
 import '../../../../res/import/import.dart';
-import 'package:http/http.dart' as http;
 
 class ChartsOrderbookTrades extends StatelessWidget {
   ChartsOrderbookTrades({Key? key}) : super(key: key);
@@ -10,13 +9,17 @@ class ChartsOrderbookTrades extends StatelessWidget {
     final config = SizeConfig();
     return StatefulBuilder(builder: (context, setState) {
       return Container(
-        height: Index == 0 ? config.sh(591) : config.sh(700),
+        height: Index == 0
+            ? config.sh(591)
+            : Index == 1
+                ? config.sh(700)
+                : config.sh(350),
         width: MediaQuery.of(context).size.width,
         color: roqquWhite,
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               child: Container(
                 height: config.sh(40),
                 width: MediaQuery.of(context).size.width,
@@ -79,140 +82,146 @@ class ChartsOrderbookTrades extends StatelessWidget {
                 ),
               ),
             ),
-            Consumer<WebsocketProvider>(
-              builder: (context, web, child) {
-                return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Time',
-                        style: Theme.of(context).textTheme.bodyText2,
-                      ),
-                      InkWell(
-                          onTap: () {
-                            web.value = '1h';
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color:
-                                  web.value == '1h' ? greyColor : Transparent,
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(4),
-                              child: Text(
-                                '1H',
-                                style: Theme.of(context).textTheme.bodyText2,
+            if (Index == 0)
+              Consumer<WebsocketProvider>(
+                builder: (context, web, child) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Time',
+                          style: Theme.of(context).textTheme.bodyText2,
+                        ),
+                        InkWell(
+                            onTap: () {
+                              web.value = '1h';
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color:
+                                    web.value == '1h' ? greyColor : Transparent,
+                                borderRadius: BorderRadius.circular(50),
                               ),
-                            ),
-                          )),
-                      InkWell(
-                          onTap: () {
-                            web.value = '2h';
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color:
-                                  web.value == '2h' ? greyColor : Transparent,
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(4),
-                              child: Text(
-                                '2H',
-                                style: Theme.of(context).textTheme.bodyText2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(4),
+                                child: Text(
+                                  '1H',
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                ),
                               ),
-                            ),
-                          )),
-                      InkWell(
-                          onTap: () {
-                            web.value = '4h';
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color:
-                                  web.value == '4h' ? greyColor : Transparent,
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(4),
-                              child: Text(
-                                '4H',
-                                style: Theme.of(context).textTheme.bodyText2,
+                            )),
+                        InkWell(
+                            onTap: () {
+                              web.value = '2h';
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color:
+                                    web.value == '2h' ? greyColor : Transparent,
+                                borderRadius: BorderRadius.circular(50),
                               ),
-                            ),
-                          )),
-                      InkWell(
-                          onTap: () {
-                            web.value = '1d';
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color:
-                                  web.value == '1d' ? greyColor : Transparent,
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(4),
-                              child: Text(
-                                '1D',
-                                style: Theme.of(context).textTheme.bodyText2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(4),
+                                child: Text(
+                                  '2H',
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                ),
                               ),
-                            ),
-                          )),
-                      InkWell(
-                          onTap: () {
-                            web.value = '1w';
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color:
-                                  web.value == '1w' ? greyColor : Transparent,
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(4),
-                              child: Text(
-                                '1W',
-                                style: Theme.of(context).textTheme.bodyText2,
+                            )),
+                        InkWell(
+                            onTap: () {
+                              web.value = '4h';
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color:
+                                    web.value == '4h' ? greyColor : Transparent,
+                                borderRadius: BorderRadius.circular(50),
                               ),
-                            ),
-                          )),
-                      InkWell(
-                          onTap: () {
-                            web.value = '1m';
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color:
-                                  web.value == '1m' ? greyColor : Transparent,
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(4),
-                              child: Text(
-                                '1M',
-                                style: Theme.of(context).textTheme.bodyText2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(4),
+                                child: Text(
+                                  '4H',
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                ),
                               ),
-                            ),
-                          )),
-                      Icon(Icons.keyboard_arrow_down_outlined),
-                      Image.asset('assets/images/Candle Chart 1.png'),
-                      Text(
-                        'Fx',
-                        style: Theme.of(context).textTheme.bodyText2,
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
+                            )),
+                        InkWell(
+                            onTap: () {
+                              web.value = '1d';
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color:
+                                    web.value == '1d' ? greyColor : Transparent,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(4),
+                                child: Text(
+                                  '1D',
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                ),
+                              ),
+                            )),
+                        InkWell(
+                            onTap: () {
+                              web.value = '1w';
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color:
+                                    web.value == '1w' ? greyColor : Transparent,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(4),
+                                child: Text(
+                                  '1W',
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                ),
+                              ),
+                            )),
+                        InkWell(
+                            onTap: () {
+                              web.value = '1m';
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color:
+                                    web.value == '1m' ? greyColor : Transparent,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(4),
+                                child: Text(
+                                  '1M',
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                ),
+                              ),
+                            )),
+                        const Icon(Icons.keyboard_arrow_down_outlined),
+                        Image.asset('assets/images/Candle Chart 1.png'),
+                        Text(
+                          'Fx',
+                          style: Theme.of(context).textTheme.bodyText2,
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
             Flexible(
                 child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Index == 0 ? Charts() : OrderBooks(),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Index == 0
+                  ? const Charts()
+                  : Index == 1
+                      ? const OrderBooks()
+                      : RecentTrades(),
             )),
           ],
         ),

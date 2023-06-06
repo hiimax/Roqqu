@@ -9,7 +9,7 @@ showLoaderDialog(
       return BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: AlertDialog(
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(26.0))),
           content: Container(
               // key: key,
@@ -21,34 +21,34 @@ showLoaderDialog(
               ),
               child: Center(
                 child: Column(children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 27,
                   ),
                   Image.asset(
                     'assets/images/dummy.png',
                     scale: 2,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Text(title,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
 
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Text(message,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
 
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 36,
                   ),
                   CustomButton(
@@ -73,7 +73,7 @@ showInternetLoaderDialog(
       return BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: AlertDialog(
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(26.0))),
           content: Container(
               // key: key,
@@ -85,33 +85,33 @@ showInternetLoaderDialog(
               ),
               child: Center(
                 child: Column(children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 27,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.signal_wifi_connected_no_internet_4,
                     size: 120,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Text(title,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Text(message,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
 
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 36,
                   ),
                   CustomButton(

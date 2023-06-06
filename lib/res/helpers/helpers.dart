@@ -27,7 +27,7 @@ void showErrorToast({String? message, int duration = 3}) {
     instantInit: true,
     duration: Duration(seconds: duration),
     backgroundColor: Colors.red.withOpacity(.8),
-    margin: EdgeInsets.symmetric(horizontal: 20),
+    margin: const EdgeInsets.symmetric(horizontal: 20),
     snackPosition: SnackPosition.TOP,
     borderRadius: 8,
   );
@@ -38,8 +38,8 @@ void showSuccessToast({String? message}) {
     message: message?.capitalizeFirst ?? '',
     title: 'Success',
     instantInit: true,
-    duration: Duration(seconds: 4),
-    margin: EdgeInsets.symmetric(horizontal: 20),
+    duration: const Duration(seconds: 4),
+    margin: const EdgeInsets.symmetric(horizontal: 20),
     snackPosition: SnackPosition.TOP,
     borderRadius: 8,
   );

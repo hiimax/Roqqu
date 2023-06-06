@@ -25,31 +25,63 @@ class roqquhelper {
       ),
       textTheme: TextTheme(
         headline1: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-        headline2:  TextStyle(fontSize: 16.0,color: roqquTextColor, fontWeight: FontWeight.w500),
-        headline3:  TextStyle(fontSize: 16.0,color: roqquBuyColor, fontWeight: FontWeight.w500),
-        bodyText1: TextStyle(fontSize: 12.0,color: roqquSecondaryTextColor, fontWeight: FontWeight.w500),
-        bodyText2: TextStyle(fontSize: 14.0,color: roqquSecondaryTextColor, fontWeight: FontWeight.w500,),
-        subtitle1: TextStyle(fontSize: 10.0,color: roqquSecondaryTextColor, fontWeight: FontWeight.w500,),
-      subtitle2: TextStyle(fontSize: 10.0,color: roqquBuyColor, fontWeight: FontWeight.w500,),
-      headline4: TextStyle(fontSize: 10.0,color: roqquVoltColor, fontWeight: FontWeight.w500,),
-        headline5: TextStyle(fontSize: 12.0,color: roqquVoltColor, fontWeight: FontWeight.w500,),
-        headline6: TextStyle(fontSize: 12.0,color: roqquTextColor, fontWeight: FontWeight.w500,),
-        headlineLarge: TextStyle(fontSize: 12.0,color: roqquBuyColor, fontWeight: FontWeight.w500,),
-
+        headline2: TextStyle(
+            fontSize: 16.0, color: roqquTextColor, fontWeight: FontWeight.w500),
+        headline3: TextStyle(
+            fontSize: 16.0, color: roqquBuyColor, fontWeight: FontWeight.w500),
+        bodyText1: TextStyle(
+            fontSize: 12.0,
+            color: roqquSecondaryTextColor,
+            fontWeight: FontWeight.w500),
+        bodyText2: TextStyle(
+          fontSize: 14.0,
+          color: roqquSecondaryTextColor,
+          fontWeight: FontWeight.w500,
+        ),
+        subtitle1: TextStyle(
+          fontSize: 10.0,
+          color: roqquSecondaryTextColor,
+          fontWeight: FontWeight.w500,
+        ),
+        subtitle2: TextStyle(
+          fontSize: 10.0,
+          color: roqquBuyColor,
+          fontWeight: FontWeight.w500,
+        ),
+        headline4: TextStyle(
+          fontSize: 10.0,
+          color: roqquVoltColor,
+          fontWeight: FontWeight.w500,
+        ),
+        headline5: TextStyle(
+          fontSize: 12.0,
+          color: roqquVoltColor,
+          fontWeight: FontWeight.w500,
+        ),
+        headline6: TextStyle(
+          fontSize: 12.0,
+          color: roqquTextColor,
+          fontWeight: FontWeight.w500,
+        ),
+        headlineLarge: TextStyle(
+          fontSize: 12.0,
+          color: roqquBuyColor,
+          fontWeight: FontWeight.w500,
+        ),
         button: TextStyle(fontSize: 16.0, color: Colors.white),
       ),
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: roqquBlack,
         size: 24.0,
       ),
       buttonTheme: ButtonThemeData(
         buttonColor: Colors.blue,
-        padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
       ),
-      inputDecorationTheme: InputDecorationTheme(
+      inputDecorationTheme: const InputDecorationTheme(
         border: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.grey),
         ),
@@ -76,27 +108,27 @@ class roqquhelper {
       focusColor: Colors.blue,
       hoverColor: Colors.grey[200],
       errorColor: Colors.red,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         color: roqquWhite,
-        elevation:0,
+        elevation: 0,
       ),
-      textTheme: TextTheme(
+      textTheme: const TextTheme(
         headline1: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
         bodyText1: TextStyle(fontSize: 16.0),
         button: TextStyle(fontSize: 16.0, color: Colors.white),
       ),
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: Colors.blue,
         size: 24.0,
       ),
       buttonTheme: ButtonThemeData(
         buttonColor: Colors.blue,
-        padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
       ),
-      inputDecorationTheme: InputDecorationTheme(
+      inputDecorationTheme: const InputDecorationTheme(
         border: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.grey),
         ),
@@ -106,9 +138,4 @@ class roqquhelper {
       ),
     );
   }
-
-
-
 }
-
-

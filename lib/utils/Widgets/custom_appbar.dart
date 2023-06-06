@@ -3,7 +3,7 @@ import '../../../res/import/import.dart';
 
 
 class CustomAppbar extends StatefulWidget implements PreferredSizeWidget {
-  CustomAppbar(
+  const CustomAppbar(
       {Key? key,
         this.actions = const [],
         this.isTransparent = false,
@@ -27,7 +27,7 @@ class CustomAppbar extends StatefulWidget implements PreferredSizeWidget {
   @override
   _CustomAppbarState createState() => _CustomAppbarState();
   @override
-  Size get preferredSize => Size.fromHeight(90);
+  Size get preferredSize => const Size.fromHeight(90);
 }
 
 class _CustomAppbarState extends State<CustomAppbar> {
@@ -52,8 +52,8 @@ class _CustomAppbarState extends State<CustomAppbar> {
         )
             : null,
         automaticallyImplyLeading: widget.automaticallyImplyLeading,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 28.0),
+        title: const Padding(
+          padding: EdgeInsets.only(top: 28.0),
           child: Text(
             "",
           ),

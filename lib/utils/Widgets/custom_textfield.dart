@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 
 String decimalValue(String value) {
-  final pattern = r'\.\d+';
+  const pattern = r'\.\d+';
   final match = RegExp(pattern).firstMatch(value);
   final decimalValues = match?.group(0); // Output: .6300000
   final parsedValue = double.parse(decimalValues!);
@@ -32,7 +32,7 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final textAlign;
 
-  CustomTextFormField(
+  const CustomTextFormField(
       {Key? key,
         this.validator,
         this.label,
@@ -57,7 +57,7 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: TextFormField(
         controller: controller,
@@ -72,7 +72,7 @@ class CustomTextFormField extends StatelessWidget {
         maxLines: maxLines ?? 1,
         onTap: onTap,
         style: textStyle ??
-            TextStyle(
+            const TextStyle(
                 fontFamily: "Helvetica Neue",
                 fontWeight: FontWeight.w500,
                 color: roqquBlack,
@@ -80,30 +80,30 @@ class CustomTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText,
           labelText: label,
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 16,
               color: roqquSecondaryTextColor),
           fillColor: fillColor ?? Colors.transparent,
           filled: true,
           enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Transparent,
               ),
               borderRadius: BorderRadius.circular(10)),
           errorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Transparent),
+              borderSide: const BorderSide(color: Transparent),
               borderRadius: BorderRadius.circular(10)),
           focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Transparent),
+              borderSide: const BorderSide(color: Transparent),
               borderRadius: BorderRadius.circular(10)),
-          labelStyle: TextStyle(
+          labelStyle: const TextStyle(
               color: roqquBlack,
               fontSize: 16,
               fontWeight: FontWeight.w700),
           prefixIcon: prefixIcon,
           suffix: suffixIcon,
-          prefixIconConstraints: BoxConstraints(
+          prefixIconConstraints: const BoxConstraints(
             minWidth: 13,
           ),
         ),

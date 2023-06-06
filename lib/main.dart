@@ -19,7 +19,7 @@ void main() async {
     await LocalStorage.setItem("device_token", '$deviceId');
     print('device token $value');
   });
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -77,7 +77,7 @@ class _MyAppState extends State<MyApp> {
               navigatorKey: navigatorKey,
               home: Builder(builder: (context) {
                 SizeConfig.init(context);
-                return SplashScreen();
+                return const SplashScreen();
               }),
             );
           },

@@ -1,8 +1,6 @@
 import 'package:roqqu/res/import/import.dart';
 import 'package:http/http.dart' as http;
-import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:web_socket_channel/io.dart';
-import 'dart:convert';
 
 class WebsocketProvider with ChangeNotifier {
   List<Candle> candles = [];
@@ -27,7 +25,6 @@ class WebsocketProvider with ChangeNotifier {
     );
     final completer = Completer<List<Candle>>();
     channel.stream.listen((message) {
-      print(message);
       Future<List<Candle>> _fetchCandles() async {
         final uri = Uri.parse(
             "https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=$value");

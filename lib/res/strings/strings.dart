@@ -1,4 +1,4 @@
-final String AppName = 'roqqu';
+const String AppName = 'roqqu';
 const image = 'assets/images/homebackground.png';
 const bedrooms = '3 bed bungalow';
 const leaseType = 'For sale';

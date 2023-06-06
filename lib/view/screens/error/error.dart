@@ -26,7 +26,7 @@ class CustomError extends StatelessWidget {
               'assets/images/dummy.png',scale: 1.5,),
             const SizedBox(height: 30),
 
-            Text(
+            const Text(
 
               'Oopse! ',
               textAlign: TextAlign.center,
@@ -36,7 +36,7 @@ class CustomError extends StatelessWidget {
                   fontSize: 21),
             ),
             const SizedBox(height: 10),
-            Text(
+            const Text(
               ' Something went wrong!',
               textAlign: TextAlign.center,
               style:  TextStyle(

@@ -11,7 +11,7 @@ class OrderBooks extends StatelessWidget {
       builder: (context, web, child) {
         return Column(
           children: [
-            Padding(padding: EdgeInsets.only(top: 19),
+            Padding(padding: const EdgeInsets.only(top: 19),
               child:  Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -26,7 +26,7 @@ class OrderBooks extends StatelessWidget {
                         ),
                       ),
 
-                      XMargin(10),
+                      const XMargin(10),
                       Container(
                         height: config.sh(32),
                         width: config.sh(32),
@@ -36,7 +36,7 @@ class OrderBooks extends StatelessWidget {
                         ),
                       ),
 
-                      XMargin(10),
+                      const XMargin(10),
                       Container(
                         height: config.sh(32),
                         width: config.sh(32),
@@ -58,7 +58,7 @@ class OrderBooks extends StatelessWidget {
                         children: [
                           Text('10',
                             style: Theme.of(context).textTheme.headline2,),
-                          Icon(Icons.keyboard_arrow_down_rounded),
+                          const Icon(Icons.keyboard_arrow_down_rounded),
                         ],
                       ),
                     ),
@@ -66,7 +66,7 @@ class OrderBooks extends StatelessWidget {
 
                 ],
               ),),
-            Padding(padding: EdgeInsets.only(top: 19),
+            Padding(padding: const EdgeInsets.only(top: 19),
               child: Column(
                 children: [
                   Row(
@@ -77,7 +77,7 @@ class OrderBooks extends StatelessWidget {
                         child:   Container(
                             height: config.sh(20),
                             color: Transparent,
-                            child:    Padding(padding: EdgeInsets.only(left: 30),
+                            child:    Padding(padding: const EdgeInsets.only(left: 30),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -94,7 +94,7 @@ class OrderBooks extends StatelessWidget {
                         child:    Container(
                             height: config.sh(20),
                             color: Transparent,
-                            child:  Padding(padding: EdgeInsets.only(right: 30),
+                            child:  Padding(padding: const EdgeInsets.only(right: 30),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
@@ -111,7 +111,7 @@ class OrderBooks extends StatelessWidget {
                         child:   Container(
                             height: config.sh(20),
                             color: Transparent,
-                            child:  Padding(padding: EdgeInsets.only(right: 20),
+                            child:  Padding(padding: const EdgeInsets.only(right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -126,7 +126,7 @@ class OrderBooks extends StatelessWidget {
                     ],
                   ),
                  Column(children: [
-                   Padding(padding: EdgeInsets.only(top: 19),
+                   Padding(padding: const EdgeInsets.only(top: 19),
                      child:  Row(
                        children: [
                          Expanded(
@@ -134,7 +134,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: Transparent,
-                               child:  Padding(padding: EdgeInsets.only(left: 30),
+                               child:  Padding(padding: const EdgeInsets.only(left: 30),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.start,
                                    children: [
@@ -151,7 +151,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: Transparent,
-                               child:  Padding(padding: EdgeInsets.only(right: 20),
+                               child:  Padding(padding: const EdgeInsets.only(right: 20),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.end,
                                    children: [
@@ -168,7 +168,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: roqquVoltColor,
-                               child:  Padding(padding: EdgeInsets.only(right: 20),
+                               child:  Padding(padding: const EdgeInsets.only(right: 20),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.end,
                                    children: [
@@ -182,7 +182,7 @@ class OrderBooks extends StatelessWidget {
 
                        ],
                      ),),
-                   Padding(padding: EdgeInsets.only(top: 19),
+                   Padding(padding: const EdgeInsets.only(top: 19),
                      child:  Row(
                        children: [
                          Expanded(
@@ -190,7 +190,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: Transparent,
-                               child:  Padding(padding: EdgeInsets.only(left: 30),
+                               child:  Padding(padding: const EdgeInsets.only(left: 30),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.start,
                                    children: [
@@ -207,7 +207,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: Transparent,
-                               child:  Padding(padding: EdgeInsets.only(right: 20),
+                               child:  Padding(padding: const EdgeInsets.only(right: 20),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.end,
                                    children: [
@@ -224,7 +224,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: Transparent,
-                               child:  Padding(padding: EdgeInsets.only(right: 20),
+                               child:  Padding(padding: const EdgeInsets.only(right: 20),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.end,
                                    children: [
@@ -238,7 +238,7 @@ class OrderBooks extends StatelessWidget {
 
                        ],
                      ),),
-                   Padding(padding: EdgeInsets.only(top: 19),
+                   Padding(padding: const EdgeInsets.only(top: 19),
                      child:  Row(
                        children: [
                          Expanded(
@@ -246,7 +246,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: Transparent,
-                               child:  Padding(padding: EdgeInsets.only(left: 30),
+                               child:  Padding(padding: const EdgeInsets.only(left: 30),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.start,
                                    children: [
@@ -263,7 +263,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: Transparent,
-                               child:  Padding(padding: EdgeInsets.only(right: 20),
+                               child:  Padding(padding: const EdgeInsets.only(right: 20),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.end,
                                    children: [
@@ -280,7 +280,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: roqquVoltColor,
-                               child:  Padding(padding: EdgeInsets.only(right: 20),
+                               child:  Padding(padding: const EdgeInsets.only(right: 20),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.end,
                                    children: [
@@ -294,7 +294,7 @@ class OrderBooks extends StatelessWidget {
 
                        ],
                      ),),
-                   Padding(padding: EdgeInsets.only(top: 19),
+                   Padding(padding: const EdgeInsets.only(top: 19),
                      child:  Row(
                        children: [
                          Expanded(
@@ -302,7 +302,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: Transparent,
-                               child:  Padding(padding: EdgeInsets.only(left: 30),
+                               child:  Padding(padding: const EdgeInsets.only(left: 30),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.start,
                                    children: [
@@ -319,7 +319,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: Transparent,
-                               child:  Padding(padding: EdgeInsets.only(right: 20),
+                               child:  Padding(padding: const EdgeInsets.only(right: 20),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.end,
                                    children: [
@@ -336,7 +336,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: Transparent,
-                               child:  Padding(padding: EdgeInsets.only(right: 20),
+                               child:  Padding(padding: const EdgeInsets.only(right: 20),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.end,
                                    children: [
@@ -350,7 +350,7 @@ class OrderBooks extends StatelessWidget {
 
                        ],
                      ),),
-                   Padding(padding: EdgeInsets.only(top: 19),
+                   Padding(padding: const EdgeInsets.only(top: 19),
                      child:  Row(
                        children: [
                          Expanded(
@@ -358,7 +358,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: Transparent,
-                               child:  Padding(padding: EdgeInsets.only(left: 30),
+                               child:  Padding(padding: const EdgeInsets.only(left: 30),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.start,
                                    children: [
@@ -375,7 +375,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: roqquVoltColor,
-                               child:  Padding(padding: EdgeInsets.only(right: 20),
+                               child:  Padding(padding: const EdgeInsets.only(right: 20),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.end,
                                    children: [
@@ -392,7 +392,7 @@ class OrderBooks extends StatelessWidget {
                            child:   Container(
                                height: config.sh(20),
                                color: roqquVoltColor,
-                               child:  Padding(padding: EdgeInsets.only(right: 20),
+                               child:  Padding(padding: const EdgeInsets.only(right: 20),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.end,
                                    children: [
@@ -407,25 +407,25 @@ class OrderBooks extends StatelessWidget {
                        ],
                      ),),
                  ],),
-                  YMargin(20),
+                  const YMargin(20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(NumberFormat('###.00').format(double.parse(web.open ?? '00')),
                         textAlign: TextAlign.end,
                         style: Theme.of(context).textTheme.headline3,),
-                      XMargin(10),
-                      Icon(Icons.arrow_upward_outlined,color: roqquBuyColor,size: 20,),
-                      XMargin(10),
+                      const XMargin(10),
+                      const Icon(Icons.arrow_upward_outlined,color: roqquBuyColor,size: 20,),
+                      const XMargin(10),
                       Text(NumberFormat('###.00').format(double.parse(web.low ?? '00')),
                         textAlign: TextAlign.end,
                         style: Theme.of(context).textTheme.headline2,),
 
                     ],
                   ),
-                  YMargin(20),
+                  const YMargin(20),
                   Column(children: [
-                    Padding(padding: EdgeInsets.only(top: 19),
+                    Padding(padding: const EdgeInsets.only(top: 19),
                       child:  Row(
                         children: [
                           Expanded(
@@ -433,7 +433,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(left: 30),
+                                child:  Padding(padding: const EdgeInsets.only(left: 30),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -450,7 +450,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(right: 20),
+                                child:  Padding(padding: const EdgeInsets.only(right: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -467,7 +467,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: roqquBuyColor,
-                                child:  Padding(padding: EdgeInsets.only(right: 20),
+                                child:  Padding(padding: const EdgeInsets.only(right: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -481,7 +481,7 @@ class OrderBooks extends StatelessWidget {
 
                         ],
                       ),),
-                    Padding(padding: EdgeInsets.only(top: 19),
+                    Padding(padding: const EdgeInsets.only(top: 19),
                       child:  Row(
                         children: [
                           Expanded(
@@ -489,7 +489,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(left: 30),
+                                child:  Padding(padding: const EdgeInsets.only(left: 30),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -506,7 +506,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(right: 20),
+                                child:  Padding(padding: const EdgeInsets.only(right: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -523,7 +523,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(right: 20),
+                                child:  Padding(padding: const EdgeInsets.only(right: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -537,7 +537,7 @@ class OrderBooks extends StatelessWidget {
 
                         ],
                       ),),
-                    Padding(padding: EdgeInsets.only(top: 19),
+                    Padding(padding: const EdgeInsets.only(top: 19),
                       child:  Row(
                         children: [
                           Expanded(
@@ -545,7 +545,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(left: 30),
+                                child:  Padding(padding: const EdgeInsets.only(left: 30),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -562,7 +562,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(right: 20),
+                                child:  Padding(padding: const EdgeInsets.only(right: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -579,7 +579,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: roqquBuyColor,
-                                child:  Padding(padding: EdgeInsets.only(right: 20),
+                                child:  Padding(padding: const EdgeInsets.only(right: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -593,7 +593,7 @@ class OrderBooks extends StatelessWidget {
 
                         ],
                       ),),
-                    Padding(padding: EdgeInsets.only(top: 19),
+                    Padding(padding: const EdgeInsets.only(top: 19),
                       child:  Row(
                         children: [
                           Expanded(
@@ -601,7 +601,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(left: 30),
+                                child:  Padding(padding: const EdgeInsets.only(left: 30),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -618,7 +618,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(right: 20),
+                                child:  Padding(padding: const EdgeInsets.only(right: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -635,7 +635,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(right: 20),
+                                child:  Padding(padding: const EdgeInsets.only(right: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -649,7 +649,7 @@ class OrderBooks extends StatelessWidget {
 
                         ],
                       ),),
-                    Padding(padding: EdgeInsets.only(top: 19),
+                    Padding(padding: const EdgeInsets.only(top: 19),
                       child:  Row(
                         children: [
                           Expanded(
@@ -657,7 +657,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(left: 30),
+                                child:  Padding(padding: const EdgeInsets.only(left: 30),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -674,7 +674,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: Transparent,
-                                child:  Padding(padding: EdgeInsets.only(right: 20),
+                                child:  Padding(padding: const EdgeInsets.only(right: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -691,7 +691,7 @@ class OrderBooks extends StatelessWidget {
                             child:   Container(
                                 height: config.sh(20),
                                 color: roqquBuyColor,
-                                child:  Padding(padding: EdgeInsets.only(right: 20),
+                                child:  Padding(padding: const EdgeInsets.only(right: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [

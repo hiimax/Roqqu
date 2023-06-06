@@ -6,7 +6,7 @@ class CustomWidget {
         isScrollControlled: true,
         context: context,
         builder: (BuildContext context) {
-          return Container(
+          return SizedBox(
             height: height ?? MediaQuery.of(context).size.height * 0.9,
             width: MediaQuery.of(context).size.width,
             child: child,

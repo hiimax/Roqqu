@@ -7,20 +7,23 @@ class ChartModel {
   ChartModel.fromJson(Map<String, dynamic> json) {
 
     s = json['s'];
-    k = json['k'] != null ? new K.fromJson(json['k']) : null;
+    k = json['k'] != null ? K.fromJson(json['k']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['s'] = this.s;
-    if (this.k != null) {
-      data['k'] = this.k!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['s'] = s;
+    if (k != null) {
+      data['k'] = k!.toJson();
     }
     return data;
   }
 }
 
 class K {
+
+
+
   String? o;
   String? c;
   String? h;
@@ -28,33 +31,36 @@ class K {
   String? v;
   String? V;
 
+
   K(
       {
         this.o,
         this.c,
         this.h,
+        this.l,
         this.v,
         this.V,
-        this.l,});
+        });
 
   K.fromJson(Map<String, dynamic> json) {
-    l = json['l'];
+
     o = json['o'];
     c = json['c'];
     h = json['h'];
-    V = json['V'];
+    l = json['l'];
     v = json['v'];
+    V = json['V'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['L'] = this.l;
-    data['o'] = this.o;
-    data['c'] = this.c;
-    data['h'] = this.h;
-    data['l'] = this.l;
-    data['v'] = this.v;
-    data['V'] = this.V;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['o'] = o;
+    data['c'] = c;
+    data['h'] = h;
+    data['l'] = l;
+    data['v'] = v;
+    data['V'] = V;
+
     return data;
   }
 }

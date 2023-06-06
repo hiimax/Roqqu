@@ -25,13 +25,13 @@ class AppBarNavigation extends StatelessWidget {
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: Icon(Icons.arrow_back)),
-                SizedBox(
+                    child: const Icon(Icons.arrow_back)),
+                const SizedBox(
                   width: 20,
                 ),
                 Text(
                   title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w700,
 
@@ -39,7 +39,7 @@ class AppBarNavigation extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 11,
             ),
             Text(
@@ -80,7 +80,7 @@ class AppBarNavigation1 extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
 
@@ -88,7 +88,7 @@ class AppBarNavigation1 extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 11,
                 ),
                 Text(
@@ -121,12 +121,12 @@ class AppBarNavigationWithoutPop extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w700,
               ),
             ),
-            widget ?? SizedBox.shrink(),
+            widget ?? const SizedBox.shrink(),
           ],
         ),
       ),
